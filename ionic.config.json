@@ -1,0 +1,7 @@
+{
+  "name": "kinderspital-intensiv",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
