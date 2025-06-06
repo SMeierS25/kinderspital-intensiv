@@ -7,6 +7,20 @@
   top: 50%;
   transform: translateY(-50%);
 }
+.logo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.logo-header ion-img { 
+  margin-top: 40px;
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
 
 #container strong {
   font-size: 20px;
@@ -24,4 +38,10 @@
 
 #container a {
   text-decoration: none;
-}
+} 
+
+.logo-light { display: block; }
+.logo-dark  { display: none; }
+
+body.dark .logo-light { display: none !important; }
+body.dark .logo-dark  { display: block !important; }

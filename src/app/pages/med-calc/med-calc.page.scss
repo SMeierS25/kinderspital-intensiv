@@ -1,0 +1,89 @@
+.calc-button {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  height: 44px;
+  font-size: 1rem;
+} 
+
+ion-header {
+  background-color: var(--ion-color-primary, #6BC048);
+  padding-top: 30px;
+} 
+ 
+/* ----------- Cards hübsch in beiden Modi ------------- */
+ion-card {
+  background: var(--ion-card-background, #fff);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin: 24px 8px;
+  padding: 8px 0;
+  color: var(--ion-text-color, #212529);
+}
+
+ion-card-content {
+  padding: 24px 16px 16px 16px;
+}
+
+ion-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--ion-text-color, #212529);
+}
+
+/* ---------- Eingabefelder mit schönem Hintergrund --------- */
+ion-item { 
+  background-color: var(--ion-card-background, #212529);
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+/* Zusatz: Farbwechsel/Outline bei Focus für bessere UX */
+ion-item.ion-focused {
+  box-shadow: 0 0 0 2px var(--ion-color-primary, #6BC048);
+}
+
+/* Textfarbe der Eingaben / Label */
+ion-label, ion-input, ion-select {
+  color: var(--ion-text-color, #212529);
+}
+
+body.dark {
+  /* Card und Item-Hintergrund in Dunkel */
+  ion-card        { background: #232526; color: var(--ion-text-color, #f4f6fb);}
+  ion-label       { color: var(--ion-text-color, #f4f6fb);}
+  ion-card-title  { color: var(--ion-text-color, #f4f6fb);}
+  ion-item        { background:  #232526; }
+  ion-input, ion-select {
+    color: #f4f6fb;
+  }
+}
+
+/* -------- Info-Icon schöner und markenfarbig -------- */
+ion-icon {
+  color: red;
+  font-size: 23px;
+  padding-top: 0px;
+}
+
+/* -------- Buttons/Icons im Button -------- */
+ion-button .button-native {
+  display: flex;
+  align-items: center;
+}
+ion-button ion-icon {
+  margin-left: 6px;
+}
+
+/* --------- Optional: Select-Optionen lesbar --------- */
+::ng-deep .alert-radio-label, /* Ion Select Options */
+::ng-deep .alert-button-inner {
+  color: var(--ion-text-color, #222);
+}
+body.dark ::ng-deep .alert-radio-label,
+body.dark ::ng-deep .alert-button-inner {
+  color: var(--ion-text-color, #f4f6fb);
+}
+

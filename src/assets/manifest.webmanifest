@@ -1,0 +1,13 @@
+{
+  "name": "Kinderspital Intensiv",
+  "short_name": "Kispit",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3880ff",
+  "description": "Die Kinderspital Intensiv-Anwendung",
+  "icons": [
+    
+  ],
+  "scope": "."
+}

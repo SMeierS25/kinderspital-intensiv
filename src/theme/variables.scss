@@ -1,2 +1,53 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// Custom Theme Variables for KinderSpital Branding
+
+:root {
+  /* Brand Colors */
+  --ion-color-primary:           #6BC048;
+  --ion-color-primary-rgb:       107,192,72;
+  --ion-color-secondary:         #F89C4B;
+  --ion-color-secondary-rgb:     248,156,75;
+  --ion-color-tertiary:          #4A90E2;
+  --ion-color-tertiary-rgb:      74,144,226;
+
+  /* Ionic Basic Colors */
+  --ion-color-light:             #ffffff;
+  --ion-color-medium:            #666666;
+  --ion-color-dark:              #000000;
+
+  /* Hintergrund & Schriftfarben */
+  --ion-background-color:        #f9f9f9;
+  --ion-background-color-rgb:    249,249,249;
+  --ion-text-color:              #222428;
+  --ion-text-color-rgb:          34,36,40;
+  --ion-item-background:         #ffffff;
+  --ion-card-background:         #ffffff;
+
+  /* Optional: Eigene Box-/Hinweisfarben */
+  --my-hint-bg:                  #f4f8eb;
+  --my-hint-text:                #3a5c1e;
+}
+
+/* ======================== */
+/*        Dark Mode         */
+/* ======================== */
+body.dark {
+  
+  --ion-color-primary:           #88ff71; // Hellere Variante für Grün
+  --ion-color-primary-rgb:       136,255,113;
+  --ion-color-secondary:          #7cb6ff; // Helleres Blau
+  --ion-color-tertiary:         #ffbe78; // Helleres Orange
+  --ion-color-secondary-rgb:     255,190,120;
+  
+  --ion-color-tertiary-rgb:      124,182,255;
+
+  --ion-background-color:        #161918;
+  --ion-background-color-rgb:    22,25,24;
+  --ion-text-color:              #f1f1fb;
+  --ion-text-color-rgb:          241,241,251;
+  --ion-item-background:         #21262c;
+  --ion-card-background:         #21262c;
+
+  /* Optional: Eigene Box-/Hinweisfarben für dark */
+  --my-hint-bg:                  #252e1b;
+  --my-hint-text:                #aefe8a;
+} 
