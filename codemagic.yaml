@@ -1,40 +1,23 @@
 workflows:
-  ionic_android_ios_web_build:
-    name: Build Ionic Angular App for Android, iOS and Web (No Credentials)
+  ionic_ios_build:
+    name: Build Ionic Angular App for iOS (No Credentials)
     environment:
       node: 20.0
       java: 17
       xcode: 15.0
-      vars:
-        PACKAGE_NAME: "com.medikamentenrechner.app"
     scripts:
-      - name: Ensure gradlew is executable
-        script: chmod +x android/gradlew
-
       - name: Install npm dependencies
         script: npm ci
 
-      - name: Build Ionic Angular Web
-        script: npx ionic build --prod
-
-      - name: Build Android
-        script: |
-          npx ionic cap sync android
-          # Java-21-Fix in allen relevanten Build-Dateien (BSD/macOS sed!):
-          sed -i '' 's/VERSION_21/VERSION_17/g' android/app/capacitor.build.gradle || true
-          sed -i '' 's/VERSION_21/VERSION_17/g' android/capacitor-cordova-android-plugins/build.gradle || true
-          cd android
-          ./gradlew assembleRelease
+      - name: Sync iOS code
+        script: npx ionic cap sync ios
 
       - name: Build iOS (unsigned)
         script: |
-          npx ionic cap sync ios
           cd ios
           xcodebuild -scheme App -workspace App.xcworkspace -configuration Release -derivedDataPath build -sdk iphoneos CODE_SIGNING_ALLOWED=NO
 
     artifacts:
-      - www/**
-      - android/app/build/outputs/**/*.apk
       - ios/build/Build/Products/Release-iphoneos/*.app
 
     cache:
