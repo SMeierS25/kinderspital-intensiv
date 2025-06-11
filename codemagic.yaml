@@ -9,9 +9,6 @@ workflows:
       - name: Install npm dependencies
         script: npm ci
 
-      - name: Add iOS platform (falls nicht im Repo)
-        script: npx cap add ios
-
       - name: Build Ionic Web (für iOS Assets)
         script: npx ionic build
 
