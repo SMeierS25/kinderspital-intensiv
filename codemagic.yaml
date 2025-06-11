@@ -3,7 +3,7 @@ workflows:
     name: Build Ionic Angular App for Android, iOS and Web (No Credentials)
     environment:
       node: 20.0
-      java: 17
+      java: 21
       xcode: 15.0
       vars:
         PACKAGE_NAME: "com.medikamentenrechner.app"
