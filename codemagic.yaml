@@ -40,9 +40,8 @@ workflows:
       - android/app/build/outputs/**/*.apk
       - ios/build/**/*.ipa
       - $CM_BUILD_ARTIFACTS/web/**
+
     publishing:
       email:
         recipients:
-          - dein.email@domain.tld
-        on_success: true
-        on_fail: true
+          - sandro.meier@buhlergroup.com
