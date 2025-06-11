@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>In Kürze weitergeleitet ...</title>
+    <meta http-equiv="refresh" content="0; url=www/">
+    <script>
+      window.location.href = "www/";
+    </script>
+  </head>
+  <body>
+    <p>Du wirst weitergeleitet ... <a href="www/">Falls nicht, klicke hier</a>.</p>
+  </body>
+</html>
