@@ -1,14 +1,26 @@
-<!DOCTYPE html> 
-<html lang="de"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta http-equiv="refresh" content="0; url=dist/index.html" /> 
-    <title>Lade App…</title> 
-    <script> 
-      // Schnelle JS-Weiterleitung, falls meta-refresh nicht schnell genug ist 
-      window.location.href = "/home"; </script> 
-  </head> 
-  <body> 
-    <p>Weiterleitung zur eigentlichen App…</p> 
-  </body> 
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weiterleitung zur App</title>
+    <meta http-equiv="refresh" content="0; url=docs/#/home" />
+    <script>
+      // Fallback, falls das meta-refresh nicht greift
+      window.location.replace("docs/#/home");
+    </script>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2em;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      Deine App benötigt JavaScript.<br />
+      <a href="docs/#/home">Hier geht's weiter</a>
+    </noscript>
+    <p>Du wirst weitergeleitet…</p>
+  </body>
 </html>
