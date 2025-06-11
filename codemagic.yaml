@@ -1,36 +1,45 @@
 workflows:
-  ionic_android_web_build:
-    name: Build Ionic Angular App for Android and Web
+  ionic_android_ios_web_build:
+    name: Build Ionic Angular App for Android, iOS and Web (No Credentials)
     environment:
-      node: 20.0                       # Node.js >= 18.19
+      node: 20.0
       java: 17
+      xcode: 15.0
       vars:
-        PACKAGE_NAME: "com.medikamentenrechner.app"    # Passe ggf. an
+        PACKAGE_NAME: "com.medikamentenrechner.app"
     scripts:
-      # --- Setup-Schritt: Android Permissions checken
       - name: Ensure gradlew is executable
         script: chmod +x android/gradlew
 
-      # --- Dependencies installieren
       - name: Install npm dependencies
         script: npm ci
 
-      # --- App builden: Web
       - name: Build Ionic Angular Web
         script: npx ionic build --prod
 
-      # --- App builden: Android
-      - name: Build Ionic Angular Android
+      - name: Build Android
         script: |
           npx ionic cap sync android
           cd android
           ./gradlew assembleRelease
 
+      - name: Build iOS (unsigned)
+        script: |
+          npx ionic cap sync ios
+          cd ios
+          xcodebuild -scheme App -workspace App.xcworkspace -configuration Release -derivedDataPath build -sdk iphoneos CODE_SIGNING_ALLOWED=NO
+
     artifacts:
       - www/**
       - android/app/build/outputs/**/*.apk
+      - ios/build/Build/Products/Release-iphoneos/*.app
 
     cache:
       cache_paths:
         - ~/.npm
-        - node_modules 
+        - node_modules
+
+    publishing:
+      email:
+        recipients:
+          - deine.email@example.com  # optional
