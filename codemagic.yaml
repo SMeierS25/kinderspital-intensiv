@@ -7,7 +7,6 @@ workflows:
         IONIC_ENV: "production"
       node: 18.16.0
       npm: 8.19.2
-      flutter: ""
       xcode: latest
       groups:
         - google_play
@@ -25,18 +24,16 @@ workflows:
           npx cap sync
       - name: Build Android APK
         script: |
-          npx cap open android
           cd android
           ./gradlew assembleRelease
-      # Für Web-Build als Fallback (optional)
+      # Web-Artifacts (optional)
       - name: Export Web Build
         script: |
           mkdir -p $CM_BUILD_ARTIFACTS/web
           cp -R www/* $CM_BUILD_ARTIFACTS/web/
-      # iOS Build (läuft nur auf Mac!)
+      # iOS Build (nur bei Mac-Builds)
       - name: Build iOS Release
         script: |
-          npx cap open ios
           cd ios
           xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -archivePath $HOME/output/App.xcarchive archive
     artifacts:
@@ -47,6 +44,5 @@ workflows:
       email:
         recipients:
           - dein.email@domain.tld
-        notify_on_build_start: false
-        notify_on_build_success: true
-        notify_on_build_failure: true
+        on_success: true
+        on_fail: true
