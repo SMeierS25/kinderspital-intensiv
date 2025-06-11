@@ -9,6 +9,9 @@ workflows:
       - name: Install npm dependencies
         script: npm ci
 
+      - name: Build Ionic Web (für iOS Assets)
+        script: npx ionic build
+
       - name: Sync iOS code
         script: npx ionic cap sync ios
 
