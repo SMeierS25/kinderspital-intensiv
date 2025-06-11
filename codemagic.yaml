@@ -17,16 +17,16 @@ workflows:
 
       - name: Install iOS CocoaPods
         script: |
-          cd ios
+          cd ios/App
           pod install
 
       - name: Build iOS (unsigned)
         script: |
-          cd ios
+          cd ios/App
           xcodebuild -scheme App -workspace App.xcworkspace -configuration Release -derivedDataPath build -sdk iphoneos CODE_SIGNING_ALLOWED=NO
 
     artifacts:
-      - ios/build/Build/Products/Release-iphoneos/*.app
+      - ios/App/build/Build/Products/Release-iphoneos/*.app
 
     cache:
       cache_paths:
