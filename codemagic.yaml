@@ -4,7 +4,6 @@ workflows:
     environment:
       node: 20.0                       # Node.js >= 18.19
       java: 17
-      android: true
       vars:
         PACKAGE_NAME: "com.medikamentenrechner.app"    # Passe ggf. an
     scripts:
