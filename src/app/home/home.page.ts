@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 @Component({
+  standalone: true, 
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'], 

@@ -4,8 +4,15 @@
   margin-bottom: 8px;
 } 
 
-ion-header {
-  background-color: var(--ion-color-primary, #6BC048);
-  padding-top: 30px;
+ion-back-button {
+  color: #f89c4b; 
+}
+
+ion-header { 
+  padding-top: 25px;
+  margin-bottom: 30px;
 } 
- 
+  
+ion-button {
+  margin-top: 20px; 
+}

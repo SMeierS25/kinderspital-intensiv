@@ -8,13 +8,15 @@ import { NgFor, NgIf } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { informationCircleOutline } from 'ionicons/icons'; 
 import { AlertController } from '@ionic/angular/standalone';
+import { CommonModule } from '@angular/common';
 
 addIcons({
   'information-circle-outline': informationCircleOutline
 });
 
 @Component({
-  imports: [IonicModule, FormsModule, NgFor, NgIf], 
+  imports: [IonicModule, FormsModule, NgFor, NgIf,CommonModule], 
+  standalone: true,
   selector: 'app-med-calc',
   templateUrl: './med-calc.page.html',
   styleUrls: ['./med-calc.page.scss']

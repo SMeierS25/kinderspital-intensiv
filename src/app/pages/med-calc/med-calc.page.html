@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>Medikamenten-Rechner</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -10,7 +10,7 @@
 <ion-content fullscreen class="ion-padding">
   <ion-card>
     <ion-card-content>
-      <h2 style="margin-top: 0">Berechnung</h2>
+      <h2>Berechnung</h2>
       <form (ngSubmit)="calculate()">
         <ion-item>
           <ion-label position="stacked">Gewicht (kg)</ion-label>
@@ -47,14 +47,13 @@
 
   <ion-card *ngIf="result?.dose">
     <ion-card-content>
-      <div style="display: flex; align-items: center">
+      <div class="resultAnzeige">
         <b>{{result.name}}</b>
         <ion-button
           *ngIf="shouldShowHintIcon()"
           fill="clear"
           size="small"
           color="primary"
-          style="margin-left: 8px"
           (click)="openHint()"
         >
           <ion-icon

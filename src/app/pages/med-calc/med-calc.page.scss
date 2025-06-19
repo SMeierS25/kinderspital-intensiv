@@ -7,10 +7,23 @@
 } 
 
 ion-header {
-  background-color: var(--ion-color-primary, #6BC048);
   padding-top: 30px;
 } 
- 
+
+h2 {
+  margin-top: 0; 
+} 
+
+.resultAnzeige {
+  display: flex; 
+  align-items: center; 
+
+} 
+
+ion-button {
+  margin-left: 8px; 
+}
+
 /* ----------- Cards hübsch in beiden Modi ------------- */
 ion-card {
   background: var(--ion-card-background, #fff);

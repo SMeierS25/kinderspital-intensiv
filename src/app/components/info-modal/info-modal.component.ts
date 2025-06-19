@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({ 
+  standalone: true, 
   imports:[IonicModule],
   selector: 'app-info-modal',
   styleUrls:['./info-modal.component.scss'], 
@@ -24,7 +25,6 @@ import { IonicModule } from '@ionic/angular';
           name="information-circle-outline"
           size="large"
           color="primary"
-          style="vertical-align: middle; margin-right: 8px;"
         ></ion-icon>
         <div class="hint-content">
           <div class="hint-title">

@@ -1,14 +1,5 @@
 <div class="logo-header">
-  <ion-img
-    src="assets/img/logo-light.png"
-    class="logo logo-light"
-    alt="Logo Kinderspital"
-  />
-  <ion-img
-    src="assets/img/logo-dark.png"
-    class="logo logo-dark"
-    alt="Logo Kinderspital Dark"
-  />
+  <ion-img src="assets/img/logo.png" class="logo" alt="Logo Kinderspital" />
 </div>
 <ion-content class="ion-padding">
   <ion-card>
@@ -18,12 +9,7 @@
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button
-        color="primary"
-        expand="block"
-        [routerLink]="['/med-calc']"
-        style="margin-bottom: 7px"
-      >
+      <ion-button color="primary" expand="block" [routerLink]="['/med-calc']">
         Medikamentenrechner starten
       </ion-button>
       <ion-button color="secondary" expand="block" [routerLink]="['/history']"
